@@ -1,0 +1,267 @@
+/* ==========================
+   ROOT VARIABLES
+========================== */
+
+:root {
+  --sage: #5e7d73;
+  --sage-light: #e7efe9;
+  --cream: #faf7f2;
+  --coral: #d99272;
+  --dark: #2f3b37;
+  --text: #4c5a55;
+  --border: #d9e3dc;
+  --white: #ffffff;
+
+  --shadow-sm: 0 4px 12px rgba(0,0,0,.05);
+  --shadow-md: 0 10px 25px rgba(0,0,0,.08);
+
+  --radius: 20px;
+  --transition: all .3s ease;
+}
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.7;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+}
+
+ul{
+  list-style:none;
+}
+
+/* ==========================
+   TYPOGRAPHY
+========================== */
+
+h1,h2,h3,h4{
+  font-family:'Playfair Display',serif;
+  color:var(--dark);
+  line-height:1.2;
+}
+
+h1{ font-size:4rem; }
+h2{ font-size:3rem; }
+h3{ font-size:1.4rem; }
+
+.section-label{
+  color:var(--coral);
+  font-weight:600;
+  letter-spacing:1px;
+  margin-bottom:12px;
+  text-transform:uppercase;
+  font-size:.85rem;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(250,247,242,.95);
+  backdrop-filter:blur(12px);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:20px 8%;
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.logo-circle{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:var(--coral);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:bold;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+  max-width:1300px;
+  margin:auto;
+  min-height:90vh;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+
+  align-items:center;
+
+  padding:100px 8%;
+}
+
+/* ==========================
+   CORAL HEADSHOT FRAME (FIXED)
+========================== */
+
+.image-frame{
+  padding:10px;
+  border-radius:30px;
+  background:var(--coral);
+  display:inline-block;
+
+  box-shadow:
+    0 0 0 2px var(--coral),
+    var(--shadow-md);
+}
+
+.image-frame img{
+  height:650px;
+  object-fit:cover;
+  border-radius:22px;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.primary-btn,
+.secondary-btn{
+  padding:14px 24px;
+  border-radius:999px;
+  font-weight:600;
+  transition:var(--transition);
+}
+
+.primary-btn{
+  background:var(--sage);
+  color:white;
+}
+
+.primary-btn:hover{
+  background:var(--coral);
+}
+
+.secondary-btn{
+  border:1px solid var(--sage);
+  color:var(--sage);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+  transform:translateY(-3px);
+}
+
+/* ==========================
+   PORTFOLIO
+========================== */
+
+.portfolio{
+  background:var(--sage-light);
+  padding:100px 8%;
+}
+
+.portfolio-card{
+  background:white;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  transition:var(--transition);
+}
+
+.portfolio-card:hover{
+  transform:translateY(-10px);
+  box-shadow:var(--shadow-md);
+}
+
+/* ==========================
+   PROJECTS
+========================== */
+
+.project-card{
+  background:white;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  transition:var(--transition);
+}
+
+.project-card:hover{
+  transform:translateY(-8px);
+}
+
+.project-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 18px;
+  border-radius:999px;
+  background:var(--coral);
+  color:white;
+  transition:var(--transition);
+}
+
+.project-btn:hover{
+  background:var(--sage);
+}
+
+/* ==========================
+   BACK LINK
+========================== */
+
+.back-home{
+  display:inline-block;
+  margin:40px;
+  color:var(--coral);
+  font-weight:600;
+}
+
+/* ==========================
+   ANIMATION
+========================== */
+
+.fade-up{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.7s ease;
+}
+
+.fade-up.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:992px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  h1{ font-size:3rem; }
+  h2{ font-size:2.3rem; }
+}
